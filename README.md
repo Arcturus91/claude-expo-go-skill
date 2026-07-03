@@ -38,6 +38,23 @@ Follow them in this order for a new app:
 | 8 | `expo-go-workflow.md` | run on a real phone via QR, share a build with a teammate (EAS Update) |
 | 9 | `troubleshooting.md` | the setup traps that cost the most time |
 
+## Beyond the MVP (native features — mind the Expo Go boundary)
+
+The MVP runs in Expo Go. These next features split by whether they need native code compiled in — if
+so, you build your own **development build** (`eas build --profile development`): Expo Go plus your
+native modules, same dev loop, installed once (not ejecting, not the store build).
+
+| Feature | Expo Go? | Reference |
+|---|---|---|
+| Local / scheduled notifications | ✅ | `notifications.md` |
+| Remote push (FCM — arrives when the app is closed) | needs dev build | `push-notifications-fcm.md` |
+| Device location (foreground) | ✅ | `location.md` |
+| Device location (background) | needs dev build | `location.md` |
+| Maps | needs dev build | `maps.md` |
+
+Runtime permissions (notifications incl. Android 13+ `POST_NOTIFICATIONS`, location, iOS usage strings)
+are covered inside those references.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

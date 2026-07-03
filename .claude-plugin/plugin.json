@@ -1,6 +1,6 @@
 {
   "name": "expo-go",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Build, run, and share React Native apps through Expo Go: scaffolding, expo-router, Firebase (auth/Firestore/rules), local notifications, on-device runs, and EAS Update sharing.",
   "author": { "name": "Arcturus91" },
   "homepage": "https://github.com/Arcturus91/claude-expo-go-skill",

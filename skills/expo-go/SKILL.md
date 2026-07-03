@@ -1,6 +1,6 @@
 ---
 name: expo-go
-description: Use when starting a demo or MVP mobile app with Expo Go — a React Native app with Firebase email/password auth and Firestore as the database, runnable on a physical phone with no native build and shareable via EAS Update. Covers project scaffolding, expo-router navigation, Firebase setup, secure Firestore rules, session/role state, local testing, and the setup traps. Triggers: Expo, Expo Go, expo-router, EAS Update, "start a mobile app", MVP, React Native + Firebase, Firebase auth, Firestore, "run on my phone".
+description: Use when starting a demo or MVP mobile app with Expo Go — a React Native app with Firebase email/password auth and Firestore as the database, runnable on a physical phone with no native build and shareable via EAS Update. Covers project scaffolding, expo-router navigation, Firebase setup, secure Firestore rules, session/role state, local testing, and the setup traps — plus post-MVP native features (local + push/FCM notifications, maps, device location, runtime permissions) and when they require a development build. Triggers: Expo, Expo Go, expo-router, EAS Update, development build, "start a mobile app", MVP, React Native + Firebase, Firebase auth, Firestore, notifications, push notifications, FCM, maps, location, permissions, "run on my phone".
 ---
 
 # Start a demo/MVP mobile app in Expo Go (React Native + Firebase)
@@ -47,6 +47,20 @@ Expo Go runs your JS on a real device with **no native build step**, as long as 
 | Unit + Firestore-rules tests (local, no cloud) | [testing.md](references/testing.md) |
 | Run on my phone via QR, share a build with a teammate | [expo-go-workflow.md](references/expo-go-workflow.md) |
 | Something broke during setup | [troubleshooting.md](references/troubleshooting.md) |
+
+## Beyond the MVP — common features (mind the Expo Go boundary)
+
+The MVP above runs entirely in Expo Go. The features juniors reach for next split by whether they need native code compiled in. If they do, you make a **development build** (`eas build --profile development`) — your *own* Expo Go with your native modules; same QR + Fast Refresh loop, just installed once. It is **not** ejecting and **not** the store build. Each reference below leads with where it runs.
+
+| Feature | Runs in Expo Go? | Reference |
+|---|---|---|
+| Local / scheduled notifications | ✅ yes | [notifications.md](references/notifications.md) |
+| Remote push (FCM — arrives even when the app is closed / phone asleep) | ❌ needs a dev build | [push-notifications-fcm.md](references/push-notifications-fcm.md) |
+| Device location — foreground ("where am I now") | ✅ yes | [location.md](references/location.md) |
+| Device location — background (tracking while backgrounded) | ❌ needs a dev build | [location.md](references/location.md) |
+| Maps | ❌ needs a dev build | [maps.md](references/maps.md) |
+
+Runtime **permissions** are covered inside those references — including the Android 13+ `POST_NOTIFICATIONS` runtime permission, iOS one-shot permission prompts, and the iOS location usage-description strings. See [expo-go-workflow.md](references/expo-go-workflow.md) for making the development build these features need.
 
 ## Principles baked into these references
 
