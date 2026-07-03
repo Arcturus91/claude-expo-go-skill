@@ -1,0 +1,13 @@
+{
+  "name": "expo-go-skill",
+  "owner": { "name": "Arcturus91" },
+  "description": "Skills for starting demo/MVP React Native mobile apps with Expo Go, Firebase auth, and Firestore.",
+  "plugins": [
+    {
+      "name": "expo-go",
+      "source": "./",
+      "description": "Build, run, and share React Native apps through Expo Go: scaffolding, expo-router, Firebase, notifications, on-device runs, and EAS Update sharing.",
+      "version": "0.1.0"
+    }
+  ]
+}
